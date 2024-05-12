@@ -41,67 +41,31 @@
             <div class="row gx-4 gx-lg-5 align-items-center">
                 <div class="col-md-6">
                     {% if item.img %}
-                    <img class="card-img-top mb-5 mb-md-0" src="{{ item.img.url }}" alt="{{ item.name }}">
+                    <img class="card-img-top mb-5 mb-md-0 shadow rounded" src="{{ item.img.url }}" alt="{{ item.name }}">
                     {% else %}
                     <!--<img class="card-img-top mb-5 mb-md-0" src="{% static 'default.png' %}" alt="{{ item.name }}">-->
-                    <img class="card-img-top mb-5 mb-md-0" src="static/default.png" alt="{{ item.name }}">
+                    <img class="card-img-top mb-5 mb-md-0 shadow" src="static/default.png" alt="{{ item.name }}">
                     {% endif %}
                 </div>
                 <div class="col-md-6">
                     <h1 class="display-5 fw-bolder">{{ item.name }}</h1>
                     <div class="fs-5 mb-5">
-                        <span>{{ item.price }}</span>
+                        <span>{{ item.price }}€</span>
                     </div>
                     <p class="lead">{{ item.desc }}</p>
-                    <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                            style="max-width: 3rem">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            Add to cart
-                        </button>
-                    </div>
                 </div>
             </div>
-            <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6 m-5 w-auto">
-                    <table class="p-5 w-100 table-bordered">
-                        <tr>
-                            <td class="p-2">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </td>
-                            <td class="p-2">
-                                0 customers voted
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="p-2">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                            </td>
-                            <td class="p-2">
-                                3 customers voted
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="p-2">
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                                <i class="bi bi-star"></i>
-                            </td>
-                            <td class="p-2">
-                                24 customers voted
-                            </td>
-                        </tr>
-                    </table>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-6 mt-5 w-50">
+                    <!--start of element-->
+                    <div class="shadow p-3 bg-white rounded mb-4">
+                        <div>
+                            <sup>user name</sup>
+                        </div>
+                        <div>
+                            hello is this still available?
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
