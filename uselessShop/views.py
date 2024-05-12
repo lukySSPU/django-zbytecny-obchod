@@ -9,3 +9,11 @@ def uselessShop_menu(request):
         'items' : items,
     }
     return HttpResponse(template.render(context, request))
+
+def uselessShop_itemInspection(request, id):
+    item = Item.objects.get(id=id)
+    template = loader.get_template('uselessShop_itemInspection.html')
+    context = {
+        'item' : item,
+    }
+    return HttpResponse(template.render(context, request))
