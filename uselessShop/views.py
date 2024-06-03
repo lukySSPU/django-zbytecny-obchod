@@ -1,6 +1,6 @@
 from django.shortcuts import loader
 from django.http import HttpResponse
-from .models import Item
+from .models import Item, Comment
 
 def uselessShop_menu(request):
     items = Item.objects.all()
