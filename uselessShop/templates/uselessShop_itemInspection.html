@@ -43,8 +43,7 @@
                     {% if item.img %}
                     <img class="card-img-top mb-5 mb-md-0 shadow rounded" src="{{ item.img.url }}" alt="{{ item.name }}">
                     {% else %}
-                    <!--<img class="card-img-top mb-5 mb-md-0" src="{% static 'default.png' %}" alt="{{ item.name }}">-->
-                    <img class="card-img-top mb-5 mb-md-0 shadow" src="static/default.png" alt="{{ item.name }}">
+                    <img class="card-img-top mb-5 mb-md-0" src="{% static 'default.png' %}" alt="{{ item.name }}">
                     {% endif %}
                 </div>
                 <div class="col-md-6">
@@ -57,15 +56,17 @@
             </div>
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-6 mt-5 w-50">
+                    {% for comm in item.comment.all %}
                     <!--start of element-->
                     <div class="shadow p-3 bg-white rounded mb-4">
                         <div>
-                            <sup>user name</sup>
+                            <sup>{{ comm.username }}</sup>
                         </div>
                         <div>
-                            hello is this still available?
+                            {{ comm.text }}
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
