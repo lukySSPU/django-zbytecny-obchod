@@ -17,19 +17,7 @@
 
 
     <header>
-        <nav class="navbar navbar-expand navbar-dark bg-dark">
-            <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./index.html">Home<span class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./about.html">About us</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./account.html">Account</a>
-                </li>
-            </ul>
-        </nav>
+        {% include 'navbar.html' %}
         <div class="text-center bg-dark text-light p-3">
             <h1 class="display-1">THE USELESS SHOP</h1>
             <div>useless things for useless people</div>
@@ -69,6 +57,31 @@
                     {% endfor %}
                 </div>
             </div>
+            {% if user.is_authenticated %}
+                <div>
+                    <div>
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="mb-0">Add a comment</h3>
+                            </div>
+                            <div class="card-body">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        {{ form.username }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control form-control-lg" id="id_text" name="text" rows="4">{{ form.text.value|default_if_none:'' }}</textarea>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </main>
 
